@@ -1,7 +1,5 @@
 # v-money Mask for Vue.js
 
-![The Mask Money](https://cdn-images-1.medium.com/max/600/1*Rpc289FpghuHrnzyVpOUig.gif)
-
 ## Features
 
 - Lightweight (<2KB gzipped)
@@ -10,8 +8,7 @@
 - Component or Directive flavors
 - Accept copy/paste
 - Editable
-
-For other types of mask, use [vue-the-mask](https://vuejs-tips.github.io/vue-the-mask)
+- Built-in `money` filter
 
 ## Usage
 
@@ -41,7 +38,7 @@ Vue.directive('money', VMoney)
 ```html
 <template>
   <div>
-    <money v-model="price" v-bind="money"></money> {{price}}
+    <money v-model="price" v-bind="money"></money> {{ price | money }}
   </div>
 </template>
 
