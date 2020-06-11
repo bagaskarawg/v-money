@@ -2,7 +2,7 @@
   <input type="tel"
          :value="formattedValue"
          v-on="listeners"
-         v-money="{precision, decimal, thousands, prefix, suffix, allowBlank}"
+         v-money="{precision, decimal, thousands, prefix, suffix, allowBlank, min, max}"
          class="v-money" />
 </template>
 
@@ -46,7 +46,15 @@ export default {
     allowBlank: {
       type: Boolean,
       default: () => defaults.allowBlank
-    }
+    },
+    min: {
+      type: Number,
+      default: () => defaults.min
+    },
+    max: {
+      type: Number,
+      default: () => defaults.max
+    },
   },
 
   directives: {money},

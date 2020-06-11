@@ -8,7 +8,8 @@
 - Component or Directive flavors
 - Accept copy/paste
 - Editable
-- Built-in `money` filter
+- Built-in `money` filter (https://github.com/vuejs-tips/v-money/pull/30)
+- Min / Max Limits (https://github.com/vuejs-tips/v-money/pull/36)
 
 ## Usage
 
@@ -57,7 +58,9 @@ Vue.directive('money', VMoney)
           prefix: 'R$ ',
           suffix: ' #',
           precision: 2,
-          masked: false
+          masked: false, /* doesn't work with directive */
+          min: 0,
+          max: 1000
         }
       }
     }
@@ -87,7 +90,9 @@ Must use `v-model.lazy` to bind works properly.
           prefix: 'R$ ',
           suffix: ' #',
           precision: 2,
-          masked: false /* doesn't work with directive */
+          masked: false, /* doesn't work with directive */
+          min: 0,
+          max: 1000
         }
       }
     },
@@ -108,6 +113,8 @@ Must use `v-model.lazy` to bind works properly.
 | suffix     | false    | String  | ""      | Percentage for example: " %"                            |
 | masked     | false    | Boolean | false   | If the component output should include the mask or not  |
 | allowBlank | false    | Boolean | false   | If the field can start blank and be cleared out by user |
+| min       | false    | Number  | Number.MIN_SAFE_INTEGER | The min value allowed                                   |
+| max       | false    | Number  | Number.MAX_SAFE_INTEGER | The max value allowed                                   |
 
 ### References
 
@@ -116,3 +123,7 @@ Must use `v-model.lazy` to bind works properly.
 - http://www.xe.com/symbols.php
 - https://github.com/kevinongko/vue-numeric
 - https://github.com/plentz/jquery-maskmoney
+- https://github.com/vuejs-tips/v-money/pull/51
+- https://github.com/vuejs-tips/v-money/pull/66
+- https://github.com/vuejs-tips/v-money/pull/55
+- https://github.com/vuejs-tips/v-money/pull/82

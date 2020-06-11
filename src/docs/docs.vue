@@ -85,6 +85,19 @@
     </div>
   </div>
 
+  <div class="column col-2 col-sm-3">
+    <label class="form-label" for="min">Min</label>
+  </div>
+  <div class="column col-2 col-sm-3">
+    <input class="form-input" type="number" id="min" v-model="config.min" />
+  </div>
+  <div class="column col-2 col-sm-3">
+    <label class="form-label" for="max">Max</label>
+  </div>
+  <div class="column col-2 col-sm-3">
+    <input class="form-input" type="number" id="max" v-model="config.max" />
+  </div>
+
   <hr />
 
   <h3>Features</h3>
@@ -100,27 +113,36 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import money from '../index'
-import vuetify from 'vuetify'
+import Vue from "vue";
+import money from "../index";
+import vuetify from "vuetify";
 
-Vue.use(money)
-Vue.use(vuetify)
+Vue.use(money);
+Vue.use(vuetify);
 
 export default {
-  data () {
+  data() {
     return {
       price: 1234.5,
       priceDirective: 5432.1,
-      priceVuetify: 6789.10,
-      config: {decimal: ',', thousands: '.', prefix: 'R$ ', suffix: ' #', precision: 2, masked: false}
-    }
+      priceVuetify: 6789.1,
+      config: {
+        decimal: ",",
+        thousands: ".",
+        prefix: "R$ ",
+        suffix: " #",
+        precision: 2,
+        masked: false,
+        min: 0,
+        max: 100000
+      }
+    };
   }
-}
+};
 </script>
 
 <style lang="css">
-@import url('https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.2.14/spectre.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/spectre.css/0.2.14/spectre.min.css");
 .v-money {
   text-align: right;
 }
@@ -135,9 +157,9 @@ body {
   background-color: white;
   border-radius: 4px;
   margin-top: 20px;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
-  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 }
 figure {
   text-align: center;

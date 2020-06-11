@@ -8,6 +8,13 @@ function format (input, opt = defaults) {
   if (!isNaN(input)) {
     input = Number(input).toFixed(fixed(opt.precision))
   }
+
+  if (input > opt.max) {
+      input = opt.max
+  } else if (input < opt.min) {
+      input = opt.min
+  }
+
   var negative = input.indexOf('-') >= 0 ? '-' : ''
 
   var numbers = onlyNumbers(input)
