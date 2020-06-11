@@ -1,6 +1,10 @@
 import defaults from './options'
 
 function format (input, opt = defaults) {
+  if (opt.allowBlank && input == '') {
+    return ''
+  }
+
   if (!isNaN(input)) {
     input = Number(input).toFixed(fixed(opt.precision))
   }
