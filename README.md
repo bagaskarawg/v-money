@@ -17,12 +17,23 @@ For other types of mask, use [vue-the-mask](https://vuejs-tips.github.io/vue-the
 
 ### A. Globally
 
+Register component and directive globally:
+
 ```js
 import Vue from 'vue'
 import money from 'v-money'
 
 // register directive v-money and component <money>
 Vue.use(money, {precision: 4})
+```
+
+Register only directive globally:
+
+```js
+import Vue from 'vue'
+import { VMoney } from 'v-money'
+// register only directive v-money
+Vue.directive('money', VMoney)
 ```
 
 ### B. Use as component: https://jsfiddle.net/auom8st8/
