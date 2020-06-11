@@ -1,7 +1,7 @@
 <template lang="html">
   <input type="tel"
          :value="formattedValue"
-         @change="change"
+         v-on="listeners"
          v-money="{precision, decimal, thousands, prefix, suffix}"
          class="v-money" />
 </template>
@@ -50,6 +50,15 @@ export default {
   data () {
     return {
       formattedValue: ''
+    }
+  },
+  
+  computed: {
+    listeners: {
+      return {
+        ...this.$listeners,
+        change: this.change
+      }
     }
   },
 
