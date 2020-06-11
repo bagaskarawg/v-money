@@ -58,7 +58,7 @@ Vue.use(money, {precision: 4})
 ```
 
 ### C. Use as directive: https://jsfiddle.net/nj3cLoum/2/
-Must use `vmodel.lazy` to bind works properly.
+Must use `v-model.lazy` to bind works properly.
 ```html
 <template>
   <div>
