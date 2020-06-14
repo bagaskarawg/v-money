@@ -1,5 +1,5 @@
 {
-  "name": "v-money",
+  "name": "v-uang",
   "version": "0.9.0",
   "description": "Vue currency input/directive mask",
   "main": "dist/v-money.js",
